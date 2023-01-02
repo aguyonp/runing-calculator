@@ -1,0 +1,25 @@
+# Nom de la pipeline
+name: Build and Deploy Docker Container
+
+# Déclencheur de la pipeline
+on:
+  workflow_dispatch:
+
+# Étapes de la pipeline
+jobs:
+  build-and-deploy:
+    # Type de machine pour exécuter la pipeline
+    runs-on: ubuntu-latest
+    steps:
+      # Cloner le dépôt
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Builder l'image Docker
+      - name: Build Docker Image
+        run: docker build -t runing-calculator:latest .
+      # Se connecter à la registry
+      - name: Login to Registry
+        run: echo "${{ secrets.REGISTRY_PASSWORD }}" | docker login -u "${{ secrets.REGISTRY_USERNAME }}" --password-stdin
+      # Publier l'image sur la registry
+      - name: Push Docker Image
+        run: docker push runing-calculator:latest
