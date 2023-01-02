@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculateur de performance en course à pied</title>
+    <script type="text/javascript" src="src/script.js"></script>
+  </head>
+  <body>
+    <h1>Calculateur de performance en course à pied</h1>
+    <form>
+      <label for="distance">Distance parcourue (en mètres) :</label><br />
+      <input
+        type="number"
+        id="distance"
+        name="distance"
+        onchange="calculatePerformance()"
+      /><br />
+      <br />
+      <label for="hours">Temps effectué (heures) :</label><br />
+      <input
+        type="number"
+        id="hours"
+        name="hours"
+        onchange="calculatePerformance()"
+      /><br />
+      <br />
+      <label for="minutes">Temps effectué (minutes) :</label><br />
+      <input
+        type="number"
+        id="minutes"
+        name="minutes"
+        onchange="calculatePerformance()"
+      /><br />
+      <br />
+      <label for="seconds">Temps effectué (secondes) :</label><br />
+      <input
+        type="number"
+        id="seconds"
+        name="seconds"
+        onchange="calculatePerformance()"
+      /><br />
+      <br />
+    </form>
+    <br />
+    <strong>Vitesse (KM/H) :</strong> <span id="speedKMH"></span><br />
+    <strong>Vitesse (minutes/KM) :</strong> <span id="speedMinPerKM"></span>
+  </body>
+</html>
