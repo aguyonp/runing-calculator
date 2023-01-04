@@ -3,16 +3,18 @@
   <head>
     <title>Calculateur de performance en course à pied</title>
     <script type="text/javascript" src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   </head>
   <body>
-    <h1>Calculateur de performance en course à pied</h1>
-    <form>
+    <h1 class="title">Calculateur de performance en course à pied</h1>
+    <form class="input-data">
       <label for="distance">Distance parcourue (en mètres) :</label><br />
       <input
         type="number"
         id="distance"
         name="distance"
-        onchange="calculatePerformance()"
+        oninput="calculatePerformance()"
       /><br />
       <br />
       <label for="hours">Temps effectué (heures) :</label><br />
@@ -20,7 +22,7 @@
         type="number"
         id="hours"
         name="hours"
-        onchange="calculatePerformance()"
+        oninput="calculatePerformance()"
       /><br />
       <br />
       <label for="minutes">Temps effectué (minutes) :</label><br />
@@ -28,7 +30,7 @@
         type="number"
         id="minutes"
         name="minutes"
-        onchange="calculatePerformance()"
+        oninput="calculatePerformance()"
       /><br />
       <br />
       <label for="seconds">Temps effectué (secondes) :</label><br />
@@ -36,12 +38,14 @@
         type="number"
         id="seconds"
         name="seconds"
-        onchange="calculatePerformance()"
+        oninput="calculatePerformance()"
       /><br />
       <br />
     </form>
     <br />
-    <strong>Vitesse (KM/H) :</strong> <span id="speedKMH"></span><br />
-    <strong>Vitesse (minutes/KM) :</strong> <span id="speedMinPerKM"></span>
+    <div class="results">
+      <strong>Vitesse (KM/H) :</strong> <span id="speedKMH"></span><br />
+      <strong>Vitesse (minutes/KM) :</strong> <span id="speedMinPerKM"></span>
+    </div>
   </body>
 </html>

@@ -1,0 +1,101 @@
+/* Style général */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+  
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #191414;
+    color: #b3b3b3;
+}
+  
+/* Style du formulaire */
+form.input-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #282828;
+    border-radius: 5px;
+}
+  
+form.input-data label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+  
+form.input-data input[type="number"] {
+    width: 70%;
+    height: 40px;
+    font-size: 18px;
+    padding: 0 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #b3b3b3;
+    color: #191414;
+}
+  
+/* Style des résultats */
+.results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+  
+.results strong {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+  
+.results span {
+    font-size: 24px;
+    font-weight: bold;
+}
+  
+/* Style de la page */
+.title {
+    text-align: center;
+    font-size: 36px;
+    color: #1db954;
+    margin-bottom: 20px;
+}
+  
+/* Animation de l'entrée en scène du formulaire */
+form.input-data {
+  animation: slide-in 0.5s ease-in-out;
+}
+  
+@keyframes slide-in {
+  from {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+  
+/* Animation de l'affichage des résultats */
+.results {
+  animation: fade-in 0.5s ease-in-out;
+}
+  
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+  
+/* Animation de survol des champs de saisie */
+form.input-data input[type="number"]:hover {
+    box-shadow: 0 0 10px #1db954;
+}
