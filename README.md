@@ -6,6 +6,9 @@ Demande à l'utilisateur de saisir la distance parcourue en mètres et le temps 
 Calcule et affiche la vitesse de l'athlète en KM/H et en minutes par KM
 Arrondit les résultats de vitesse au dixième
 
+## Demonstration
+![Running Calculator Demo](./img/demo.png)
+
 ## Technologies utilisées
 HTML pour structurer le contenu de la page web
 CSS pour styliser la page web
