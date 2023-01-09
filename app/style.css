@@ -139,3 +139,18 @@ form.input-data {
 form.input-data input[type="number"]:hover {
     box-shadow: 0 0 10px #1db954;
 }
+
+/* MOBILE */
+@media only screen and (max-width: 480px) {
+    form.input-data {
+        width: 90%;
+    }
+    
+    .buttons button {
+        width: 20%;
+    }
+    
+    .results {
+    width: 90%;
+    }
+}
