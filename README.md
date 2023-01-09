@@ -7,6 +7,7 @@ Calcule et affiche la vitesse de l'athlète en KM/H et en minutes par KM
 Arrondit les résultats de vitesse au dixième
 
 ## Demonstration
+[DEMO](https://aguyonp.github.io/running-calculator/)
 ![Running Calculator Demo](./img/demo.png)
 
 ## Technologies utilisées

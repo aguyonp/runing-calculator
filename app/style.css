@@ -10,6 +10,22 @@ body {
     background-color: #191414;
     color: #b3b3b3;
 }
+
+button {
+    width: 50px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #1db954;
+    border: none;
+    border-radius: 5px;
+    color: #191414;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #16a045;
+  }
   
 /* Style du formulaire */
 form.input-data {
