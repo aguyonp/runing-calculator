@@ -11,7 +11,7 @@ body {
     color: #b3b3b3;
 }
 
-button {
+.buttons button {
     display: inline-block;
     width: 30%;
     height: 30px;
@@ -24,20 +24,20 @@ button {
     border-radius: 5px;
     color: #ffffff;
     cursor: pointer;
-}
+  }
   
-button:hover {
+.buttons button:hover {
     background-color: #16a045;
 }
   
-button:active {
+.buttons button:active {
     transform: translateY(2px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
   
-button:focus {
+.buttons button:focus {
     outline: none;
-}   
+}  
     
 /* Style du formulaire */
 form.input-data {
