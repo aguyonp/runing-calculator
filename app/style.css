@@ -70,11 +70,11 @@ form.input-data input[type="number"] {
 /* Style des résultats */
 .results {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0 auto;
 }
-  
+
 .results strong {
     font-size: 18px;
     margin-bottom: 5px;
@@ -112,6 +112,13 @@ form.input-data {
 /* Animation de l'affichage des résultats */
 .results {
   animation: fade-in 0.5s ease-in-out;
+}
+.results {
+    animation: fade-in 0.5s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0 auto;
 }
   
 @keyframes fade-in {
