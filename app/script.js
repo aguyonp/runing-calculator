@@ -36,6 +36,6 @@ function calculatePerformance() {
   // const roundedSpeedMinPerKM = speedMinPerKM.toFixed(2);
 
   // Affiche les résultats dans la page HTML
-  document.getElementById("speedKMH").innerHTML = roundedSpeedKMH + 'km/h';
+  document.getElementById("speedKMH").innerHTML = roundedSpeedKMH + ' km/h';
   document.getElementById("speedMinPerKM").innerHTML = speedMinPerKM;
 }
