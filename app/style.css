@@ -13,7 +13,7 @@ body {
 
 button {
     display: inline-block;
-    width: 80%;
+    width: 30%;
     height: 30px;
     font-size: 12px;
     margin: 10px;
@@ -37,7 +37,7 @@ button:active {
   
 button:focus {
     outline: none;
-}  
+}   
     
 /* Style du formulaire */
 form.input-data {
