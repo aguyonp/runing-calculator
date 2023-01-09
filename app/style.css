@@ -37,7 +37,7 @@ button:active {
   
 button:focus {
     outline: none;
-}
+}  
     
 /* Style du formulaire */
 form.input-data {
