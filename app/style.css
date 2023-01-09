@@ -12,20 +12,30 @@ body {
 }
 
 button {
-    width: 50px;
-    height: 30px;
-    font-size: 14px;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
     font-weight: bold;
+    font-family: "Open Sans", sans-serif;
     background-color: #1db954;
     border: none;
     border-radius: 5px;
-    color: #191414;
+    color: #ffffff;
     cursor: pointer;
-  }
+}
   
-  button:hover {
+button:hover {
     background-color: #16a045;
-  }
+}
+  
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+  
+button:focus {
+    outline: none;
+}
   
 /* Style du formulaire */
 form.input-data {
