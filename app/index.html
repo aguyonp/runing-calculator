@@ -14,15 +14,16 @@
         type="number"
         id="distance"
         name="distance"
-        oninput="calculatePerformance()"
+        min="0"
+        oninput="calculatePerformance(); calculatePassageTime();"
       /><br />
       <div class="buttons">
-        <button type="button" onclick="document.getElementById('distance').value = 42195; calculatePerformance();">42 km</button>
-        <button type="button" onclick="document.getElementById('distance').value = 21100; calculatePerformance();">21 km</button>
-        <button type="button" onclick="document.getElementById('distance').value = 15000; calculatePerformance();">15 km</button>
-        <button type="button" onclick="document.getElementById('distance').value = 10000; calculatePerformance();">10 km</button>
-        <button type="button" onclick="document.getElementById('distance').value = 5000; calculatePerformance();">5 km</button>
-        <button type="button" onclick="document.getElementById('distance').value = 1000; calculatePerformance();">1 km</button>
+        <button type="button" onclick="document.getElementById('distance').value = 42195; calculatePerformance(); calculatePassageTime();">42 km</button>
+        <button type="button" onclick="document.getElementById('distance').value = 21100; calculatePerformance(); calculatePassageTime();">21 km</button>
+        <button type="button" onclick="document.getElementById('distance').value = 15000; calculatePerformance(); calculatePassageTime();">15 km</button>
+        <button type="button" onclick="document.getElementById('distance').value = 10000; calculatePerformance(); calculatePassageTime();">10 km</button>
+        <button type="button" onclick="document.getElementById('distance').value = 5000; calculatePerformance(); calculatePassageTime();">5 km</button>
+        <button type="button" onclick="document.getElementById('distance').value = 1000; calculatePerformance(); calculatePassageTime();">1 km</button>
       </div>
       <br />
       <label for="hours">Temps effectué (heures) :</label><br />
@@ -30,7 +31,8 @@
         type="number"
         id="hours"
         name="hours"
-        oninput="calculatePerformance()"
+        min="0"
+        oninput="calculatePerformance(); calculatePassageTime();"
       /><br />
       <br />
       <label for="minutes">Temps effectué (minutes) :</label><br />
@@ -38,7 +40,8 @@
         type="number"
         id="minutes"
         name="minutes"
-        oninput="calculatePerformance()"
+        min="0"
+        oninput="calculatePerformance(); calculatePassageTime();"
       /><br />
       <br />
       <label for="seconds">Temps effectué (secondes) :</label><br />
@@ -46,14 +49,19 @@
         type="number"
         id="seconds"
         name="seconds"
-        oninput="calculatePerformance()"
+        min="0"
+        oninput="calculatePerformance(); calculatePassageTime();"
       /><br />
+      <br />
+      <label for="passageKm">Distance à laquelle calculer le temps de passage (en km) :</label><br />
+      <input type="number" id="passageKm" name="passageKm" min="0" oninput="calculatePassageTime()"/><br />
       <br />
     </form>
     <br />
     <div class="results">
       <strong>Vitesse (KM/H) :</strong> <span id="speedKMH"></span><br />
-      <strong>Vitesse (minutes/KM) :</strong> <span id="speedMinPerKM"></span>
+      <strong>Vitesse (minutes/KM) :</strong> <span id="speedMinPerKM"></span><br />
+      <strong>Temps de passage :</strong> <span id="passageTime"></span>
     </div>
   </body>
 </html>
