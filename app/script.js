@@ -67,3 +67,52 @@ function calculatePassageTime() {
   // Affiche le temps de passage dans le span passageTime
   document.getElementById("passageTime").innerHTML = passageTimeHours + ":" + passageTimeMinutesFormated + ":" + passageTimeSecondsFormated;
 }
+
+//Fonctions de méteo
+async function fetchWeatherData(lat, lon) {
+  const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m`;
+
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+
+    if (data && data.hourly && data.hourly.temperature_2m) {
+      const temperature = data.hourly.temperature_2m[0];
+      return {
+        temperature,
+      };
+    } else {
+      throw new Error('Weather data not found');
+    }
+  } catch (error) {
+    console.error('Error fetching weather data:', error);
+    return null;
+  }
+}
+
+async function displayWeather() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      async (position) => {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+
+        const weatherData = await fetchWeatherData(lat, lon);
+
+        if (weatherData) {
+          document.getElementById('weather').innerHTML = `Temperature: ${weatherData.temperature.toFixed(1)}°C`;
+        } else {
+          document.getElementById('weather').innerHTML = 'Weather data unavailable';
+        }
+      },
+      (error) => {
+        console.error('Error getting location:', error);
+        document.getElementById('weather').innerHTML = 'Unable to get location';
+      }
+    );
+  } else {
+    document.getElementById('weather').innerHTML = 'Geolocation not supported';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', displayWeather);
