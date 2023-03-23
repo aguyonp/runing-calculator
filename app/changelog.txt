@@ -1,0 +1,22 @@
+## [1.1.0] - 2023-03-23
+### Ajouté
+- Intégration de l'API météo dans le menu.
+- Affichage des informations météorologiques pour Paris.
+
+## [1.0.1] - 2023-03-23
+### Changé
+- Amélioration de l'affichage sur mobile.
+
+## [1.0.0] - 2023-03-21
+### Ajouté
+- Fonctionnalité de calcul de la performance en course à pied.
+- Calcul de la vitesse en km/h et en minutes par km.
+- Calcul du temps de passage à une distance spécifiée.
+- Boutons de sélection rapide de la distance.
+- Style CSS pour le formulaire et les résultats.
+
+### Changé
+- Mise en page et animations.
+
+### Supprimé
+- Code inutilisé
