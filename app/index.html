@@ -8,6 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
+    <!-- Ajout du menu -->
+    <nav>
+      <ul>
+        <li><a style="text-decoration:none;" href="changelog.txt">Version : 1.1.0</a></li>
+        <li id="weather">Météo : chargement.</li>
+      </ul>
+    </nav>
     <h1 class="title">Calculateur de performance en course à pied</h1>
     <form class="input-data">
       <label for="distance">Distance parcourue (en mètres) :</label><br />
@@ -65,4 +72,47 @@
       <strong>Temps de passage :</strong> <span id="passageTime"></span>
     </div>
   </body>
+  <script>
+    async function fetchWeatherData(lat, lon) {
+      const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+      const apiUrl = `https://www.metaweather.com/api/location/search/?lattlong=${lat},${lon}`;
+
+      try {
+        const response = await fetch(proxyUrl + apiUrl);
+        const data = await response.json();
+        const location = data[0];
+
+        if (location) {
+          const weatherResponse = await fetch(
+            proxyUrl + `https://www.metaweather.com/api/location/${location.woeid}/`
+          );
+          const weatherData = await weatherResponse.json();
+          const currentWeather = weatherData.consolidated_weather[0];
+
+          return {
+            temperature: currentWeather.the_temp,
+            weather: currentWeather.weather_state_name,
+          };
+        } else {
+          throw new Error('Location not found');
+        }
+      } catch (error) {
+        console.error('Error fetching weather data:', error);
+        return null;
+      }
+    }
+
+    function displayWeatherData(data) {
+      const weatherDescription = data.weather[0].description;
+      const temperature = data.main.temp;
+      const locationName = data.name;
+
+      const weatherElement = document.getElementById('weather').innerHTML = `${weatherData.weather}, ${weatherData.temperature.toFixed(1)}°C`;
+      weatherElement.innerHTML = `
+        Lieu: ${locationName} <br>
+        Temps: ${weatherDescription} <br>
+        Température: ${temperature}°C
+      `;
+    }
+  </script>
 </html>

@@ -135,7 +135,24 @@ form.input-data {
         opacity: 1;
     }
 }
-  
+
+/* Style du menu */
+nav {
+    background-color: #282828;
+    padding: 10px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+nav li a{
+    color: #b3b3b3;
+    font-size: 14px;
+}
+
 /* Animation de survol des champs de saisie */
 form.input-data input[type="number"]:hover {
     box-shadow: 0 0 10px #1db954;
