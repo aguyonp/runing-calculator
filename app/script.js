@@ -91,28 +91,18 @@ async function fetchWeatherData(lat, lon) {
 }
 
 async function displayWeather() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      async (position) => {
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude;
+  // Coordonnées de Paris
+  const lat = 48.8566;
+  const lon = 2.3522;
 
-        const weatherData = await fetchWeatherData(lat, lon);
+  const weatherData = await fetchWeatherData(lat, lon);
 
-        if (weatherData) {
-          document.getElementById('weather').innerHTML = `Temperature: ${weatherData.temperature.toFixed(1)}°C`;
-        } else {
-          document.getElementById('weather').innerHTML = 'Weather data unavailable';
-        }
-      },
-      (error) => {
-        console.error('Error getting location:', error);
-        document.getElementById('weather').innerHTML = 'Unable to get location';
-      }
-    );
+  if (weatherData) {
+    document.getElementById('weather').innerHTML = `Temperature à Paris: ${weatherData.temperature.toFixed(1)}°C`;
   } else {
-    document.getElementById('weather').innerHTML = 'Geolocation not supported';
+    document.getElementById('weather').innerHTML = 'Weather data unavailable';
   }
 }
+
 
 document.addEventListener('DOMContentLoaded', displayWeather);
